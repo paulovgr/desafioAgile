@@ -10,6 +10,11 @@
 		943B2E1E269CFF6A0092190A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E1D269CFF6A0092190A /* HomeView.swift */; };
 		943B2E21269D014F0092190A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E20269D014F0092190A /* ViewCode.swift */; };
 		943B2E22269D014F0092190A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E20269D014F0092190A /* ViewCode.swift */; };
+		943B2E24269D089C0092190A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E23269D089C0092190A /* NetworkManager.swift */; };
+		943B2E26269D095E0092190A /* RepositoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E25269D095E0092190A /* RepositoryResponseModel.swift */; };
+		943B2E28269D1B2C0092190A /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E27269D1B2C0092190A /* UserResponseModel.swift */; };
+		943B2E2D269D1CF90092190A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E2C269D1CF90092190A /* UserModel.swift */; };
+		943B2E2F269D1D580092190A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E2E269D1D580092190A /* RepositoryModel.swift */; };
 		94868F902699681000429A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F8F2699681000429A6A /* AppDelegate.swift */; };
 		94868F922699681000429A6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F912699681000429A6A /* SceneDelegate.swift */; };
 		94868F942699681000429A6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F932699681000429A6A /* HomeViewController.swift */; };
@@ -40,6 +45,11 @@
 /* Begin PBXFileReference section */
 		943B2E1D269CFF6A0092190A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		943B2E20269D014F0092190A /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		943B2E23269D089C0092190A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		943B2E25269D095E0092190A /* RepositoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponseModel.swift; sourceTree = "<group>"; };
+		943B2E27269D1B2C0092190A /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
+		943B2E2C269D1CF90092190A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		943B2E2E269D1D580092190A /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		94868F8C2699681000429A6A /* desafioAgile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioAgile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94868F8F2699681000429A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94868F912699681000429A6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943B2E29269D1C7D0092190A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				943B2E2A269D1C9A0092190A /* ResponseModels */,
+				943B2E2C269D1CF90092190A /* UserModel.swift */,
+				943B2E2E269D1D580092190A /* RepositoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		943B2E2A269D1C9A0092190A /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				943B2E27269D1B2C0092190A /* UserResponseModel.swift */,
+				943B2E25269D095E0092190A /* RepositoryResponseModel.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		943B2E2B269D1CB60092190A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		94868F832699681000429A6A = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +140,8 @@
 		94868F8E2699681000429A6A /* desafioAgile */ = {
 			isa = PBXGroup;
 			children = (
+				943B2E2B269D1CB60092190A /* New Group */,
+				943B2E29269D1C7D0092190A /* Models */,
 				94868F8F2699681000429A6A /* AppDelegate.swift */,
 				94868F912699681000429A6A /* SceneDelegate.swift */,
 				94868F932699681000429A6A /* HomeViewController.swift */,
@@ -113,6 +151,7 @@
 				94868F9D2699681400429A6A /* Info.plist */,
 				943B2E1D269CFF6A0092190A /* HomeView.swift */,
 				943B2E20269D014F0092190A /* ViewCode.swift */,
+				943B2E23269D089C0092190A /* NetworkManager.swift */,
 			);
 			path = desafioAgile;
 			sourceTree = "<group>";
@@ -265,10 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943B2E24269D089C0092190A /* NetworkManager.swift in Sources */,
+				943B2E2F269D1D580092190A /* RepositoryModel.swift in Sources */,
 				94868F942699681000429A6A /* HomeViewController.swift in Sources */,
+				943B2E28269D1B2C0092190A /* UserResponseModel.swift in Sources */,
 				943B2E21269D014F0092190A /* ViewCode.swift in Sources */,
 				943B2E1E269CFF6A0092190A /* HomeView.swift in Sources */,
+				943B2E26269D095E0092190A /* RepositoryResponseModel.swift in Sources */,
 				94868F902699681000429A6A /* AppDelegate.swift in Sources */,
+				943B2E2D269D1CF90092190A /* UserModel.swift in Sources */,
 				94868F922699681000429A6A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
