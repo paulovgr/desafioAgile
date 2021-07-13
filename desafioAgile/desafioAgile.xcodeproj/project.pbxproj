@@ -15,6 +15,11 @@
 		943B2E28269D1B2C0092190A /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E27269D1B2C0092190A /* UserResponseModel.swift */; };
 		943B2E2D269D1CF90092190A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E2C269D1CF90092190A /* UserModel.swift */; };
 		943B2E2F269D1D580092190A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E2E269D1D580092190A /* RepositoryModel.swift */; };
+		943B2E32269D20270092190A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E31269D20270092190A /* UserViewModel.swift */; };
+		943B2E34269D26940092190A /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E33269D26940092190A /* RepositoryViewModel.swift */; };
+		943B2E3A269D2E2B0092190A /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E39269D2E2B0092190A /* RepositoryCell.swift */; };
+		943B2E3C269D30240092190A /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E3B269D30240092190A /* RepositoriesViewController.swift */; };
+		943B2E3E269D30A00092190A /* RepositoriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E3D269D30A00092190A /* RepositoriesTableView.swift */; };
 		94868F902699681000429A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F8F2699681000429A6A /* AppDelegate.swift */; };
 		94868F922699681000429A6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F912699681000429A6A /* SceneDelegate.swift */; };
 		94868F942699681000429A6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94868F932699681000429A6A /* HomeViewController.swift */; };
@@ -50,6 +55,11 @@
 		943B2E27269D1B2C0092190A /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
 		943B2E2C269D1CF90092190A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		943B2E2E269D1D580092190A /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		943B2E31269D20270092190A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		943B2E33269D26940092190A /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		943B2E39269D2E2B0092190A /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		943B2E3B269D30240092190A /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		943B2E3D269D30A00092190A /* RepositoriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableView.swift; sourceTree = "<group>"; };
 		94868F8C2699681000429A6A /* desafioAgile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioAgile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94868F8F2699681000429A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94868F912699681000429A6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,17 +120,67 @@
 			path = ResponseModels;
 			sourceTree = "<group>";
 		};
-		943B2E2B269D1CB60092190A /* New Group */ = {
+		943B2E2B269D1CB60092190A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				943B2E23269D089C0092190A /* NetworkManager.swift */,
 			);
-			path = "New Group";
+			path = Service;
+			sourceTree = "<group>";
+		};
+		943B2E30269D20130092190A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				943B2E31269D20270092190A /* UserViewModel.swift */,
+				943B2E33269D26940092190A /* RepositoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		943B2E35269D2AE80092190A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				94868F932699681000429A6A /* HomeViewController.swift */,
+				943B2E3B269D30240092190A /* RepositoriesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		943B2E36269D2B050092190A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				943B2E1D269CFF6A0092190A /* HomeView.swift */,
+				943B2E39269D2E2B0092190A /* RepositoryCell.swift */,
+				943B2E3D269D30A00092190A /* RepositoriesTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		943B2E37269D2B0F0092190A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				943B2E20269D014F0092190A /* ViewCode.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		943B2E38269D2B280092190A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				94868F912699681000429A6A /* SceneDelegate.swift */,
+				94868F8F2699681000429A6A /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		94868F832699681000429A6A = {
 			isa = PBXGroup;
 			children = (
 				94868F8E2699681000429A6A /* desafioAgile */,
+				94868F982699681400429A6A /* Assets.xcassets */,
+				94868F9A2699681400429A6A /* LaunchScreen.storyboard */,
+				94868F952699681000429A6A /* Main.storyboard */,
+				94868F9D2699681400429A6A /* Info.plist */,
 				94868FA52699681400429A6A /* desafioAgileTests */,
 				94868FB02699681400429A6A /* desafioAgileUITests */,
 				94868F8D2699681000429A6A /* Products */,
@@ -140,18 +200,13 @@
 		94868F8E2699681000429A6A /* desafioAgile */ = {
 			isa = PBXGroup;
 			children = (
-				943B2E2B269D1CB60092190A /* New Group */,
+				943B2E38269D2B280092190A /* Application */,
+				943B2E2B269D1CB60092190A /* Service */,
+				943B2E37269D2B0F0092190A /* Utils */,
 				943B2E29269D1C7D0092190A /* Models */,
-				94868F8F2699681000429A6A /* AppDelegate.swift */,
-				94868F912699681000429A6A /* SceneDelegate.swift */,
-				94868F932699681000429A6A /* HomeViewController.swift */,
-				94868F952699681000429A6A /* Main.storyboard */,
-				94868F982699681400429A6A /* Assets.xcassets */,
-				94868F9A2699681400429A6A /* LaunchScreen.storyboard */,
-				94868F9D2699681400429A6A /* Info.plist */,
-				943B2E1D269CFF6A0092190A /* HomeView.swift */,
-				943B2E20269D014F0092190A /* ViewCode.swift */,
-				943B2E23269D089C0092190A /* NetworkManager.swift */,
+				943B2E36269D2B050092190A /* View */,
+				943B2E35269D2AE80092190A /* ViewControllers */,
+				943B2E30269D20130092190A /* ViewModel */,
 			);
 			path = desafioAgile;
 			sourceTree = "<group>";
@@ -305,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				943B2E24269D089C0092190A /* NetworkManager.swift in Sources */,
+				943B2E3E269D30A00092190A /* RepositoriesTableView.swift in Sources */,
 				943B2E2F269D1D580092190A /* RepositoryModel.swift in Sources */,
 				94868F942699681000429A6A /* HomeViewController.swift in Sources */,
 				943B2E28269D1B2C0092190A /* UserResponseModel.swift in Sources */,
@@ -312,8 +368,12 @@
 				943B2E1E269CFF6A0092190A /* HomeView.swift in Sources */,
 				943B2E26269D095E0092190A /* RepositoryResponseModel.swift in Sources */,
 				94868F902699681000429A6A /* AppDelegate.swift in Sources */,
+				943B2E3A269D2E2B0092190A /* RepositoryCell.swift in Sources */,
+				943B2E34269D26940092190A /* RepositoryViewModel.swift in Sources */,
 				943B2E2D269D1CF90092190A /* UserModel.swift in Sources */,
 				94868F922699681000429A6A /* SceneDelegate.swift in Sources */,
+				943B2E3C269D30240092190A /* RepositoriesViewController.swift in Sources */,
+				943B2E32269D20270092190A /* UserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS7SSX5DQ3;
-				INFOPLIST_FILE = desafioAgile/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QS7SSX5DQ3;
-				INFOPLIST_FILE = desafioAgile/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,8 +8,8 @@
 import Foundation
 
 struct RepositoryResponseModel: Decodable {
-    private let repositoryName: String?
-    private let language: String?
+     let repositoryName: String?
+     let language: String?
     
     enum CodingKeys: String, CodingKey {
         case repositoryName = "name"

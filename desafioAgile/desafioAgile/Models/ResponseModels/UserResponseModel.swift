@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserResponseModel: Decodable {
-    private var avatarUrl: String?
-    private var name: String?
+     var avatarUrl: String?
+     var name: String?
     
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"

@@ -7,10 +7,10 @@
 
 import Foundation
 struct RepositoyModel {
-    private let repositoryName: String?
-    private let language: String?
+     let repositoryName: String?
+     let language: String?
 
-    internal init(repositoryName: String?, language: String?) {
+    internal init(repositoryName: String? = nil, language: String? = nil) {
         self.repositoryName = repositoryName
         self.language = language
     }
