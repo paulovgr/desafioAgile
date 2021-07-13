@@ -28,19 +28,18 @@ class HomeViewController: UIViewController {
         
         repositoryViewModel = RepositoryViewModel(service: service)
         repositoryViewModel?.delegate = self
-
-        DispatchQueue.main.async {
-            
-
-        }
+        self.navigationController?.navigationBar.topItem?.title = "GitHub Viewer"
         
-        }
+    }
+  
 
     @objc func resultTap() {
         homeView.getButton().setTitle("Carregando", for: .normal)
         homeView.getButton().titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        self.repositoryViewModel?.fetchRepository()
+        self.repositoryViewModel?.fetchRepository(username: homeView.getTextField().text ?? "")
     }
+    
+
 }
 
 extension HomeViewController: RepositoryDelegate {

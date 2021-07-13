@@ -17,8 +17,6 @@ class RepositoryViewModel {
 
      init(service: NetworkManager) {
         self.service = service
-        
-        
     }
     
     func getRepositories() -> [RepositoyModel] {
@@ -28,12 +26,12 @@ class RepositoryViewModel {
 }
 
 extension RepositoryViewModel {
-    private func requestRepositories(completion: @escaping (Result<[RepositoryResponseModel]>) -> Void) {
-        NetworkManager().request(endpoint: .repos , completion: completion)
+    private func requestRepositories(username: String, completion: @escaping (Result<[RepositoryResponseModel]>) -> Void) {
+        NetworkManager().request(endpoint: .repos, username: username , completion: completion)
     }
     
-     func fetchRepository() {
-        requestRepositories { [self] result in
+     func fetchRepository(username: String) {
+        requestRepositories(username: username) { [self] result in
             switch result {
             case .success(let datas):
                 for data in datas {

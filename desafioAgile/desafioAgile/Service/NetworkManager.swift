@@ -21,10 +21,11 @@ enum Endpoint: String {
 public class NetworkManager {
     
     func request<T>(endpoint: Endpoint,
+                    username: String,
                   completion: @escaping (Result<T>) -> Void) where T : Decodable  {
         
         
-        guard let url = makeURL(endpoint: endpoint) else {
+        guard let url = makeURL(endpoint: endpoint, username: username) else {
             completion(.error(NSError()))
             return
         }
@@ -47,12 +48,12 @@ public class NetworkManager {
         task.resume()
     }
     
-    func makeURL(endpoint: Endpoint) -> URL? {
+    func makeURL(endpoint: Endpoint, username: String) -> URL? {
         var components = URLComponents()
         
         components.scheme = "https"
         components.host = "api.github.com"
-        components.path = "/users/paulovgr\(endpoint.rawValue)"
+        components.path = "/users/\(username)\(endpoint.rawValue)"
         return components.url?.absoluteURL
     }
     

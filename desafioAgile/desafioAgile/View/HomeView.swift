@@ -48,6 +48,10 @@ class HomeView: UIView {
     func getButton () -> UIButton {
         return self.searchButton
     }
+    
+    func getTextField () -> UITextField {
+        return self.textField
+    }
 }
 
 extension HomeView: ViewCode {

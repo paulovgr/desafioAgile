@@ -23,6 +23,8 @@ class RepositoriesViewController: UIViewController {
     }
     override func loadView() {
         view = viewTable
+            
+
 
     }
     
@@ -30,6 +32,18 @@ class RepositoriesViewController: UIViewController {
         self.viewTable = RepositoriesTableView(service: service, repositoryViewModel: repositoryViewModel, userViewModel: userViewModel)
 
         print(repositoryViewModel?.getRepositories() as Any)
+        
 
     }
+    
+  
 }
+extension UIViewController {
+    
+    /**
+     *  Height of status bar + navigation bar (if navigation bar exist)
+     */
+
+   
+}
+

@@ -14,7 +14,6 @@ class UserViewModel {
 
      init(service: NetworkManager) {
         self.service = service
-        fetchUser()
     }
     
     func getUser() -> UserModel {
@@ -24,12 +23,12 @@ class UserViewModel {
 }
 
 extension UserViewModel {
-    private func requestUser(completion: @escaping (Result<UserResponseModel>) -> Void) {
-        NetworkManager().request(endpoint: .user , completion: completion)
+    private func requestUser(username: String, completion: @escaping (Result<UserResponseModel>) -> Void) {
+        NetworkManager().request(endpoint: .user, username: username , completion: completion)
     }
     
-    private func fetchUser() {
-        requestUser { [self] result in
+    private func fetchUser(username: String) {
+        requestUser(username: username) { [self] result in
             switch result {
             case .success(let data):
                 guard let avatarURL = data.avatarUrl,let name = data.name else {
