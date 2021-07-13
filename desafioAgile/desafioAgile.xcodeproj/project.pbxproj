@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942A8223269DB42B007FEFE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A8222269DB42B007FEFE4 /* ProfileView.swift */; };
+		942A8226269DC391007FEFE4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 942A8225269DC391007FEFE4 /* Kingfisher */; };
 		943B2E1E269CFF6A0092190A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E1D269CFF6A0092190A /* HomeView.swift */; };
 		943B2E21269D014F0092190A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E20269D014F0092190A /* ViewCode.swift */; };
 		943B2E22269D014F0092190A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B2E20269D014F0092190A /* ViewCode.swift */; };
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		942A8222269DB42B007FEFE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		943B2E1D269CFF6A0092190A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		943B2E20269D014F0092190A /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		943B2E23269D089C0092190A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942A8226269DC391007FEFE4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +156,7 @@
 				943B2E1D269CFF6A0092190A /* HomeView.swift */,
 				943B2E39269D2E2B0092190A /* RepositoryCell.swift */,
 				943B2E3D269D30A00092190A /* RepositoriesTableView.swift */,
+				942A8222269DB42B007FEFE4 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +250,9 @@
 			dependencies = (
 			);
 			name = desafioAgile;
+			packageProductDependencies = (
+				942A8225269DC391007FEFE4 /* Kingfisher */,
+			);
 			productName = desafioAgile;
 			productReference = 94868F8C2699681000429A6A /* desafioAgile.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +324,9 @@
 				Base,
 			);
 			mainGroup = 94868F832699681000429A6A;
+			packageReferences = (
+				942A8224269DC391007FEFE4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 94868F8D2699681000429A6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,6 +378,7 @@
 				943B2E21269D014F0092190A /* ViewCode.swift in Sources */,
 				943B2E1E269CFF6A0092190A /* HomeView.swift in Sources */,
 				943B2E26269D095E0092190A /* RepositoryResponseModel.swift in Sources */,
+				942A8223269DB42B007FEFE4 /* ProfileView.swift in Sources */,
 				94868F902699681000429A6A /* AppDelegate.swift in Sources */,
 				943B2E3A269D2E2B0092190A /* RepositoryCell.swift in Sources */,
 				943B2E34269D26940092190A /* RepositoryViewModel.swift in Sources */,
@@ -707,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		942A8224269DC391007FEFE4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		942A8225269DC391007FEFE4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 942A8224269DC391007FEFE4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94868F842699681000429A6A /* Project object */;
 }

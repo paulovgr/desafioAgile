@@ -31,10 +31,8 @@ class RepositoriesViewController: UIViewController {
     override func viewDidLoad() {
         self.viewTable = RepositoriesTableView(service: service, repositoryViewModel: repositoryViewModel, userViewModel: userViewModel)
 
-        print(repositoryViewModel?.getRepositories() as Any)
-        
-
     }
+
     
   
 }

@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     private var homeView = HomeView()
     private var service = NetworkManager()
     private var repositoryViewModel: RepositoryViewModel?
+    
     private var userViewModel: UserViewModel?
     private var repositoriesViewController = RepositoriesViewController()
 
@@ -31,12 +32,15 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = "GitHub Viewer"
         
     }
-  
 
+  
+ 
     @objc func resultTap() {
         homeView.getButton().setTitle("Carregando", for: .normal)
         homeView.getButton().titleLabel?.font = UIFont.systemFont(ofSize: 30)
+print(homeView.getTextField().text)
         self.repositoryViewModel?.fetchRepository(username: homeView.getTextField().text ?? "")
+        self.userViewModel?.fetchUser(username: homeView.getTextField().text ?? "")
     }
     
 
@@ -46,9 +50,9 @@ extension HomeViewController: RepositoryDelegate {
     func dataReady() {
         if let repositoryViewModel = repositoryViewModel {
             repositoriesViewController.repositoryViewModel = repositoryViewModel
-
         }
-        
+        repositoriesViewController.userViewModel = userViewModel
+
         self.navigationController?.pushViewController(repositoriesViewController, animated: true)
     }
     

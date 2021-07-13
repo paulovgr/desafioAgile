@@ -27,7 +27,7 @@ extension UserViewModel {
         NetworkManager().request(endpoint: .user, username: username , completion: completion)
     }
     
-    private func fetchUser(username: String) {
+     func fetchUser(username: String) {
         requestUser(username: username) { [self] result in
             switch result {
             case .success(let data):

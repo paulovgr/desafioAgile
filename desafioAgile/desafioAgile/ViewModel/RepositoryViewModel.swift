@@ -12,14 +12,14 @@ protocol RepositoryDelegate: AnyObject {
 }
 class RepositoryViewModel {
     private var service: NetworkManager
-    private var repositories = [RepositoyModel]()
+    private var repositories = [RepositoryModel]()
     weak var delegate: RepositoryDelegate?
 
      init(service: NetworkManager) {
         self.service = service
     }
     
-    func getRepositories() -> [RepositoyModel] {
+    func getRepositories() -> [RepositoryModel] {
         return repositories
     }
 
@@ -36,7 +36,7 @@ extension RepositoryViewModel {
             case .success(let datas):
                 for data in datas {
                     let emptyLanguage = data.language ?? ""
-                    repositories.append(RepositoyModel(repositoryName: data.repositoryName, language: emptyLanguage))
+                    repositories.append(RepositoryModel(repositoryName: data.repositoryName, language: emptyLanguage))
                 }
                 delegate?.dataReady()
                 //user = UserModel(avatarUrl: avatarURL, name: name)

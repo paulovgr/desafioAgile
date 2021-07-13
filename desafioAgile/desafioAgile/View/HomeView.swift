@@ -32,6 +32,8 @@ class HomeView: UIView {
         return textField
     }()
     
+
+    
 //    let borderColor = CGColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
 //    let textFieldColor = CGColor(red: 252/255, green: 252/255, blue: 252/255, alpha: 1)
 //    let textColor = CGColor(red: 148/255, green: 148/255, blue: 148/255, alpha: 1)
@@ -78,6 +80,7 @@ extension HomeView: ViewCode {
     }
     
     func setupAditionalConfiguration() {
+        
         self.backgroundColor = .white
     }
     

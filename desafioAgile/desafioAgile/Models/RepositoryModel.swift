@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct RepositoyModel {
+struct RepositoryModel {
      let repositoryName: String?
      let language: String?
 

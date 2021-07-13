@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserModel {
-    private var avatarUrl: String?
-    private var name: String?
+     var avatarUrl: String?
+     var name: String?
     
     internal init(avatarUrl: String? = nil, name: String? = nil) {
         self.avatarUrl = avatarUrl
