@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
         }
 
     @objc func resultTap() {
+        homeView.getButton().setTitle("Carregando", for: .normal)
+        homeView.getButton().titleLabel?.font = UIFont.systemFont(ofSize: 30)
         self.repositoryViewModel?.fetchRepository()
     }
 }
