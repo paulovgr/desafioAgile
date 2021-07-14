@@ -8,12 +8,12 @@
 import Foundation
 
 struct UserResponseModel: Decodable {
-     var avatarUrl: String?
-     var name: String?
+     let avatarUrl: String?
+     let name: String?
     
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"
-        case name
+        case name = "name"
     }
     
     public init(from decoder: Decoder) throws {

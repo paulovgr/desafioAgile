@@ -10,7 +10,7 @@ import UIKit
 
 class UserViewModel {
     private var service: NetworkManager
-    private var user = UserModel()
+     var user = UserModel()
 
      init(service: NetworkManager) {
         self.service = service
@@ -31,10 +31,8 @@ extension UserViewModel {
         requestUser(username: username) { [self] result in
             switch result {
             case .success(let data):
-                guard let avatarURL = data.avatarUrl,let name = data.name else {
-                    return
-                }
-                user = UserModel(avatarUrl: avatarURL, name: name)
+                
+                user = UserModel(avatarUrl: data.avatarUrl, name: data.name)
             case .error(let erro):
                 print(erro)
             }

@@ -17,9 +17,10 @@ class RepositoriesTableView: UIView {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: "cell")
-        tableView.dataSource = self
         tableView.separatorColor = UIColor(red: 148/255, green: 148/255, blue: 148/255, alpha: 1)
         tableView.allowsSelection = false
+        tableView.dataSource = self
+
         tableView.rowHeight = 80
         return tableView
     }()
@@ -42,14 +43,14 @@ class RepositoriesTableView: UIView {
     
      init(service: NetworkManager, repositoryViewModel: RepositoryViewModel?,  userViewModel: UserViewModel?) {
         self.service = service
-        super.init(frame: .zero)
         self.repositoryViewModel = repositoryViewModel
         self.userViewModel = userViewModel
-        print(userViewModel?.getUser())
-        setupViews()
+        super.init(frame: .zero)
 
+
+        self.setupViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -69,7 +70,6 @@ extension RepositoriesTableView: ViewCode  {
         addSubview(repositoriesTableView)
         addSubview(profileView)
         profileView.addSubview(imageView)
-        print(profileView.frame.height)
 
     }
     
@@ -90,10 +90,7 @@ extension RepositoriesTableView: ViewCode  {
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.profileView.topAnchor, constant: 100),
-           // imageView.leadingAnchor.constraint(equalTo: self.profileView.leadingAnchor,  constant: 100),
-          //  imageView.trailingAnchor.constraint(equalTo: self.profileView.trailingAnchor, constant: -100),
             imageView.centerXAnchor.constraint(equalTo: profileView.centerXAnchor),
-        //    imageView.bottomAnchor.constraint(equalTo: self.profileView.bottomAnchor, constant: -50),
             imageView.heightAnchor.constraint(equalToConstant: 150),
             imageView.widthAnchor.constraint(equalToConstant: 150)
 
@@ -101,7 +98,6 @@ extension RepositoriesTableView: ViewCode  {
     }
     
     func setupAditionalConfiguration() {
-        print(userViewModel?.getUser().avatarUrl)
         self.imageView.kf.setImage(with: URL(string: userViewModel?.getUser().avatarUrl ??  "https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" ))
     }
     
@@ -125,12 +121,14 @@ extension RepositoriesTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RepositoryCell
         cell.setupViews()
+        
         let repository = repositoryViewModel?.getRepositories()[indexPath.row]
-        cell.languageName(repository?.language)
-        if let name = repository?.repositoryName {
-            cell.repositoryName(name)
+        cell.languageName.text = repository?.language
 
-        }
+            cell.repositoryName.text = repository?.repositoryName
+
+        
+        
         return cell
     }
 

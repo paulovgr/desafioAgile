@@ -9,20 +9,23 @@ import Foundation
 import UIKit
 protocol RepositoryDelegate: AnyObject {
     func dataReady ()
+    func showError (msg: String)
 }
 class RepositoryViewModel {
     private var service: NetworkManager
-    private var repositories = [RepositoryModel]()
+    var repositories = [RepositoryModel]()
     weak var delegate: RepositoryDelegate?
-
-     init(service: NetworkManager) {
+    
+    init(service: NetworkManager) {
         self.service = service
+        
+        
     }
     
     func getRepositories() -> [RepositoryModel] {
         return repositories
     }
-
+    
 }
 
 extension RepositoryViewModel {
@@ -30,7 +33,7 @@ extension RepositoryViewModel {
         NetworkManager().request(endpoint: .repos, username: username , completion: completion)
     }
     
-     func fetchRepository(username: String) {
+    func fetchRepository(username: String) {
         requestRepositories(username: username) { [self] result in
             switch result {
             case .success(let datas):
@@ -39,9 +42,9 @@ extension RepositoryViewModel {
                     repositories.append(RepositoryModel(repositoryName: data.repositoryName, language: emptyLanguage))
                 }
                 delegate?.dataReady()
-                //user = UserModel(avatarUrl: avatarURL, name: name)
             case .error(let erro):
-                print(erro)
+                delegate?.showError(msg: "no connection")
+                print(erro.localizedDescription)
             }
         }
     }

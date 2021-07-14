@@ -10,8 +10,8 @@ import UIKit
 
 class RepositoriesViewController: UIViewController {
     private let service = NetworkManager()
-     var repositoryViewModel: RepositoryViewModel?
-     var userViewModel: UserViewModel?
+    var repositoryViewModel: RepositoryViewModel?
+    var userViewModel: UserViewModel?
     var viewTable: RepositoriesTableView?
     
     required init() {
@@ -21,27 +21,13 @@ class RepositoriesViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func loadView() {
         view = viewTable
-            
-
-
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         self.viewTable = RepositoriesTableView(service: service, repositoryViewModel: repositoryViewModel, userViewModel: userViewModel)
-
     }
-
-    
   
 }
-extension UIViewController {
-    
-    /**
-     *  Height of status bar + navigation bar (if navigation bar exist)
-     */
-
-   
-}
-

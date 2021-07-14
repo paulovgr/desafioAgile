@@ -8,13 +8,13 @@
 import UIKit
 
 class HomeView: UIView {
-    private let searchButton: UIButton = {
+     let searchButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.setTitleColor(.systemBlue, for: .normal)
         button.setTitleColor(.blue, for: .highlighted)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.setTitle("Search", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
     
@@ -31,12 +31,6 @@ class HomeView: UIView {
         textField.backgroundColor = UIColor(red: 252/255, green: 252/255, blue: 252/255, alpha: 1)
         return textField
     }()
-    
-
-    
-//    let borderColor = CGColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
-//    let textFieldColor = CGColor(red: 252/255, green: 252/255, blue: 252/255, alpha: 1)
-//    let textColor = CGColor(red: 148/255, green: 148/255, blue: 148/255, alpha: 1)
 
     init() {
         super.init(frame: .zero)
@@ -47,8 +41,9 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func getButton () -> UIButton {
-        return self.searchButton
+    func getButton (fontSize: Int, titleLabel: String)  {
+        searchButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(fontSize))
+        searchButton.setTitle(titleLabel, for: .normal)
     }
     
     func getTextField () -> UITextField {

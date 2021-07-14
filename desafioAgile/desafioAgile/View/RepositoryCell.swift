@@ -17,7 +17,7 @@ class RepositoryCell: UITableViewCell {
         return label
     }()
     
-    private var languageName: UILabel = {
+     var languageName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment  =  .center
@@ -34,16 +34,6 @@ class RepositoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-}
-
-extension RepositoryCell {
-    func repositoryName (_ textLabel: String?){
-        repositoryName.text = textLabel
-    }
-    
-    func languageName (_ textLabel: String?){
-        languageName.text = textLabel
-    }
 }
 
 extension RepositoryCell: ViewCode {
