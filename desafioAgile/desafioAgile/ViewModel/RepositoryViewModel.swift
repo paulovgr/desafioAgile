@@ -7,19 +7,20 @@
 
 import Foundation
 import UIKit
-protocol RepositoryDelegate: AnyObject {
-    func dataReady ()
+import Network
+
+protocol DataDelegate: AnyObject {
+    func dataReadyRepository ()
+    func dataReadyUser ()
     func showError (msg: String)
 }
 class RepositoryViewModel {
     private var service: NetworkManager
     var repositories = [RepositoryModel]()
-    weak var delegate: RepositoryDelegate?
+    weak var delegate: DataDelegate?
     
     init(service: NetworkManager) {
         self.service = service
-        
-        
     }
     
     func getRepositories() -> [RepositoryModel] {
@@ -34,6 +35,8 @@ extension RepositoryViewModel {
     }
     
     func fetchRepository(username: String) {
+        repositories.removeAll()
+
         requestRepositories(username: username) { [self] result in
             switch result {
             case .success(let datas):
@@ -41,11 +44,25 @@ extension RepositoryViewModel {
                     let emptyLanguage = data.language ?? ""
                     repositories.append(RepositoryModel(repositoryName: data.repositoryName, language: emptyLanguage))
                 }
-                delegate?.dataReady()
+                delegate?.dataReadyRepository()
             case .error(let erro):
-                delegate?.showError(msg: "no connection")
+                delegate?.showError(msg: "User not found")
                 print(erro.localizedDescription)
             }
         }
     }
+    
+    private func checkInternetConnection() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "Monitor")
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status != .satisfied {
+                self.delegate?.showError(msg: "No connection")
+            }
+        }
+        
+        monitor.start(queue: queue)
+    }
+
 }

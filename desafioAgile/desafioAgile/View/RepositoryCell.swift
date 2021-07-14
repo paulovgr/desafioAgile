@@ -8,7 +8,7 @@
 import UIKit
 
 class RepositoryCell: UITableViewCell {
-     var repositoryName: UILabel = {
+    var repositoryName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment  =  .center
@@ -17,7 +17,7 @@ class RepositoryCell: UITableViewCell {
         return label
     }()
     
-     var languageName: UILabel = {
+    var languageName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment  =  .center
@@ -25,7 +25,7 @@ class RepositoryCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
-     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -45,18 +45,14 @@ extension RepositoryCell: ViewCode {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             repositoryName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            repositoryName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            
+            repositoryName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
             languageName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            languageName.topAnchor.constraint(equalTo: self.repositoryName.bottomAnchor, constant: 2),
-            
+            languageName.topAnchor.constraint(equalTo: self.repositoryName.bottomAnchor, constant: 2)
         ])
     }
-    
-    
 }
 
 

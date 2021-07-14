@@ -11,6 +11,7 @@ import UIKit
 class UserViewModel {
     private var service: NetworkManager
      var user = UserModel()
+    weak var delegate: DataDelegate?
 
      init(service: NetworkManager) {
         self.service = service
@@ -31,8 +32,8 @@ extension UserViewModel {
         requestUser(username: username) { [self] result in
             switch result {
             case .success(let data):
-                
                 user = UserModel(avatarUrl: data.avatarUrl, name: data.name)
+                delegate?.dataReadyRepository()
             case .error(let erro):
                 print(erro)
             }

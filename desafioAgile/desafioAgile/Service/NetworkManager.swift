@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+
 enum Result<T> {
     case success(T)
     case error(Error)
@@ -15,14 +16,12 @@ enum Endpoint: String {
     case repos = "/repos"
     case user = ""
 }
-//protocol NetworkManagerProtocol {
-//    func request<T: Decodable> (completion: @escaping (Result<T, Error>) -> Void)
-//}
+
 public class NetworkManager {
     
     func request<T>(endpoint: Endpoint,
                     username: String,
-                  completion: @escaping (Result<T>) -> Void) where T : Decodable  {
+                  completion: @escaping (Result<T>) -> Void) where T : Decodable {
         
         
         guard let url = makeURL(endpoint: endpoint, username: username) else {
@@ -44,21 +43,16 @@ public class NetworkManager {
                 completion(.error(error))
             }
         }
-        
         task.resume()
     }
     
     func makeURL(endpoint: Endpoint, username: String) -> URL? {
         var components = URLComponents()
-        
         components.scheme = "https"
         components.host = "api.github.com"
         components.path = "/users/\(username)\(endpoint.rawValue)"
         return components.url?.absoluteURL
     }
-    
-
-    
 }
 
 

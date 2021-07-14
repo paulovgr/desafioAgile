@@ -14,7 +14,6 @@ class HomeView: UIView {
         button.setTitleColor(.blue, for: .highlighted)
         button.setTitle("Search", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-
         return button
     }()
     
@@ -75,7 +74,6 @@ extension HomeView: ViewCode {
     }
     
     func setupAditionalConfiguration() {
-        
         self.backgroundColor = .white
     }
     
