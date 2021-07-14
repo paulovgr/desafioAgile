@@ -47,6 +47,7 @@ extension HomeViewController {
     private func setupView() {
         self.navigationController?.navigationBar.topItem?.title = "GitHub Viewer"
         homeView.searchButton.addTarget(self, action: #selector(resultTap), for: .touchUpInside)
+        homeView.getButton(fontSize: 25, titleLabel: "Search")
     }
     
     private func setupViewModels () {

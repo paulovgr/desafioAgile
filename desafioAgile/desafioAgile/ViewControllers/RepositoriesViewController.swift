@@ -28,6 +28,7 @@ class RepositoriesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.viewTable = RepositoriesTableView(service: service, repositoryViewModel: repositoryViewModel, userViewModel: userViewModel)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = "Back"
     }
   
 }
